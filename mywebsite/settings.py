@@ -94,9 +94,8 @@ DATABASES = {
         'PORT': '5432',
         'USER': 'cjhsrmdnyjowsx',
         'PASSWORD': '89659af33f8dd7621040e5c7535dba894ee935469b2c7b0296307829ff20706e',
-        'OPTIONS' : {
-            'init_command':"SET sql_mode='STRICT_TRANS_TABLES'",
-        }
+        
+       
     }
 }
 
