@@ -36,7 +36,7 @@ Pillow==8.2.0
 psycopg2==2.8.6
 Pygments==2.8.1
 pyparsing==2.4.7
-pypiwin32==223
+
 PySocks==1.7.1
 python-dateutil==1.5
 python-rake==1.5.0
