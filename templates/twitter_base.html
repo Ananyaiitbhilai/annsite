@@ -13,11 +13,7 @@
   {% block meta %}{% endblock %}
 </head>
 <body>
-  <div class="fullscreen-bg">
-      <video loop muted autoplay poster="{% static 'videoframe.jpg' %}" class="fullscreen-bg__video">
-          <source src="{% static 'video.webm' %}" type="video/webm">
-      </video>
-  </div>
+
   <br>
   {% block search %}{% endblock %}
   <div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
