@@ -1,0 +1,90 @@
+<html><head>
+<title>neon</title>
+<style>
+@import url('https://fonts.googleapis.com/css?family=Teko&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: 'Teko', sans-serif;
+  background: #000;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 4vmin;
+}
+
+p {
+  position: relative;
+  text-align: center;
+  font-size: 8vmin;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  line-height: .8;
+  background: linear-gradient(90deg, #000, #fff, #000);
+  background-size: 80% 100%;
+  background-repeat: no-repeat;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 6s linear infinite;
+}
+
+@keyframes shine {
+  0% {
+    background-position-x: -500%;
+  }
+  
+  100% {
+    background-position-x: 500%;
+  }
+
+.topnav {
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: white;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+}
+</style>
+</head>
+<body>
+<div class="topnav">
+  <a class="active" href="#home">Home</a>
+  <a href="#news">News</a>
+  <a href="#contact">Contact</a>
+  <a href="#about">About</a>
+</div>
+
+
+<p> Welcome to the Geek Clan page:<br><a href="{% url 'err404' %}">Click here and explore the new dimensions</a></p>
+
+
+</body>
+</html>

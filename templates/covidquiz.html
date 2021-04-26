@@ -1,0 +1,56 @@
+{% load static %}
+<html>
+	<head>
+		<title> CovidQuiz </title>
+		<link rel="stylesheet" href="{% static 'css/covidquiz.css' %}">
+		<link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+       
+<style>
+       .contain {
+  text-align: center;
+}
+.butto {
+  text-decoration: none;
+  background-color: rgba(236, 229, 167, 0.2);
+  
+  color: #fff;
+  display: inline-block;
+  font-size: 1.5em;
+  padding: 8px;
+  transition: 0.35s;
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+  
+}
+.butto:hover {
+  text-decoration: none;
+  background-color: white;
+  border-color: white;
+    color: black;}
+        </style>
+	</head>
+	<body>
+		
+
+		
+           
+        
+        
+       
+    <div id="container">        <h1>JOIN THIS COVID AWARENESS DRIVE </h1>
+   			<br/>
+  			<div id="quiz"></div>
+    		<div class="button" id="next"><a href="#">Next</a></div>
+    		<div class="button" id="prev"><a href="#">Prev</a></div> 
+			<p id="demo"></p>
+    	</div>
+        <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+		<script src="{% static 'js/covidquiz.js' %}"></script>
+        <div class="contain">
+  <a class="butto" href="{% url 'homepg' %}">HOME PAGE</a>
+    
+  
+</div>
+	</body>
+</html>

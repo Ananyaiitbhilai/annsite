@@ -1,0 +1,37 @@
+{% load static %}
+<html>
+	<head>
+		<title> Quiz </title>
+		<link rel="stylesheet" href="{% static 'css/quiz.css' %}">
+		<link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+        <style>
+            
+            .rock{
+            border: 5px outset #3f51b5 ;
+  background-color: #3f51b5;    
+  text-align: center;
+               
+            margin-bottom: -20px;}
+        </style>
+	</head>
+	<body background color="black">
+		
+
+		<div id="container">
+            <h1>JOIN COMMUNITY </h1>
+   			<br/>
+  			<div id="quiz"></div>
+    		<div class="button" id="next"><a href="#">Next</a></div>
+    		<div class="button" id="prev"><a href="#">Prev</a></div> 
+			<p id="demo"></p>
+           
+        </div>
+        <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+		<script src="{% static 'js/quiz.js' %}"></script>
+        <div class="rock"><form action="#" method="POST">
+    {% csrf_token %}<font color="white">
+            Name of Community:<input type="text" id="yourgroup" name="yourgroup" value="" readonly ></font>
+        <button type="submit" class="sign-btn"><font face = "WildWest" size="4" color="black">Join Community</font></button></form></div>
+        
+	</body>
+</html>

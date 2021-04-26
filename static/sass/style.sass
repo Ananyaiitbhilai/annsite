@@ -1,0 +1,114 @@
+@import url(https://fonts.googleapis.com/css?family=Abril+Fatface)
+@import url(https://fonts.googleapis.com/css?family=Roboto:500)
+
+$speed_metal: 666ms
+$evil_ease: cubic-bezier(0.666, 0.000, 0.333, 1.000)
+
+html, body
+  width: 100%
+  height: 100%
+  overflow: hidden
+
+body
+  color: white
+  font-family: 'Roboto', sans-serif
+  font-size: 16px
+  line-height: 1em
+  background-color: black
+
+#slides
+  position: absolute
+  top: 17%
+  left: 10%
+  right: 48%
+  bottom: 17%
+  overflow: hidden
+  
+  ul
+    position: absolute
+    top: 0px
+    left: 0px
+    width: 100%
+    height: 100%
+  
+    li
+      position: relative
+      width: 100%
+      height: 100%
+
+      &:nth-child(1)
+        background-color: #131313
+      &:nth-child(2)
+        background-color: #262626
+      &:nth-child(3)
+        background-color: #393939
+      &:nth-child(4)
+        background-color: #262626
+      &:nth-child(5)
+        background-color: #131313
+
+ul#steps
+  position: absolute
+  top: 50%
+  left: 20%
+  height: 110px
+  margin-top: -55px
+  
+  li
+    position: relative
+    height: 100%
+    color: #999
+    font-family: 'Abril Fatface', serif
+    
+    transform: translate3d(0,0,0)
+    transition: color $speed_metal $evil_ease, font-size $speed_metal $evil_ease
+    
+    &.active
+      color: #bf482c
+      font-size: 96px
+
+#titles
+  position: absolute
+  top: 50%
+  left: 40%
+  width: 60%
+  height: 330px
+  margin-top: -165px
+  padding: 110px 0
+  
+  ul
+    position: absolute
+    top: 0px
+    left: 0px
+    width: 100%
+    height: 100%
+  
+  li
+    position: relative
+    width: 100%
+    height: 100%
+    visibility: hidden
+    opacity: 0
+    
+    transform: translate3d(0,0,0)
+    transition: visibility 0ms linear $speed_metal, opacity $speed_metal $evil_ease
+    
+    &.active
+      visibility: visible
+      opacity: 1
+      
+      transition: visibility 0ms linear, opacity $speed_metal $evil_ease
+    
+    h2
+      height: 110px
+      font-family: 'Abril Fatface', serif
+      font-size: 96px
+      display: block
+
+    p
+      height: 110px
+      color: #999
+
+.roller
+  transform: translate3d(0,0%,0)
+  transition: transform $speed_metal $evil_ease

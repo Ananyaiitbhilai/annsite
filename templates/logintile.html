@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+{% load static %}
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Slideshow presentation</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+  
+      <link rel="stylesheet" href="{% static 'css/tileslide.css' %}">
+<style>
+        .GFG {
+            background-color: black;
+            border: 2px solid black;
+            color: #bf482c;
+            padding: 5px 10px;
+            text-align: center;
+            display: inline-block;
+            font-size: 20px;
+            margin: 10px 10px;
+            cursor: pointer;
+            text-decoration:none;
+        }
+    .GF{position:absolute;
+     top:0;
+     right:0;
+         background-color: black;
+            border: 2px solid black;
+            color: #bf482c;
+            padding: 5px 10px;
+            text-align: center;
+            display: inline-block;
+            font-size: 20px;
+            
+            cursor: pointer;
+            text-decoration:none;
+    }
+    </style>
+  
+</head>
+
+<body>
+    <a href="{% url 'logout' %}" class="GF">
+        SIGN OUT
+    </a>
+          
+  <div id="slides">
+  <ul class="roller">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+     <li></li> 
+  </ul>
+</div>
+<ul id="steps" class="roller">
+  <li>01</li>
+  <li>02</li>
+  <li>03</li>
+  <li>04</li>
+  <li>05</li>
+  <li>06</li>  
+</ul>
+<div id="titles">
+  <ul class="roller">
+    <li>
+      <h2>Welcome back</h2>
+      <h2>Amigos</h2>
+      <p>Thanks for being back. Use the up, and down arrow keys to navigate.
+          <br>Click on Click here button to get to that respective page.
+        
+  </p>
+    </li>
+    <li>
+      <h2>Buzzinga</h2>
+      <h2>Platform</h2>
+      <p> A Buzz site for nerds by nerds.
+        <a href="{% url 'buzzinga' %}" class="GFG">
+        Click here
+    </a></p>
+    </li>
+    <li>
+      <h2>Join</h2>
+      <h2>Community</h2>
+      <p>Answer 10 simple questions and based on that enter your community.
+        <a href="{% url 'quiz' %}" class="GFG">
+        Click here
+    </a></p>
+    </li>
+    <li>
+      <h2>Fun</h2>
+      <h2>Games</h2>
+      <p>Getting bored. Play some basic yet interesting and fun games.
+        <a href="{% url 'games' %}" class="GFG">
+        Click here
+    </a></p>
+    </li>
+    <li>
+      <h2>Connect</h2>
+      <h2>Virtually</h2>
+      <p>Track the live Junta. Chat anonymously with no worry of being zucced :)
+        <a href="https://ide.geeksforgeeks.org/" class="GFG">
+        Click here
+    </a></p>
+    </li>
+      <li>
+      <h2>Adios</h2>
+      <h2>Amigos</h2>
+      <p>This was our amateur site. Hope you liked it.
+        </p>
+    </li>
+  </ul>
+</div>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js'></script>
+
+    <script src="{% static 'js/tileslide.js' %}"></script>
+
+</body>
+</html>

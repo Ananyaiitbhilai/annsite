@@ -1,0 +1,77 @@
+{% load static %}
+<html>
+<head>
+<title>Login form</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+body
+{
+margin: 0;
+padding: 0;
+font-family: sans-serif;
+background-image: url("/static/img/portfolio/fullsize/cat.jpeg");
+background-size: cover;
+background-position: center;
+}
+.sign-up-form
+{
+width: 300px;
+box-shadow: 0 0 3px 0 rgba(0,0,0,0.3);
+background: #fff;
+padding: 20 px;
+margin: 5% auto 0;
+text-align: center;
+    opacity: 0.8;
+}
+.sign-up-form h1
+{
+color: #000000;
+margin-bottom: 30px;
+}
+.input-box
+{
+border-radius: 20px;
+padding: 10px;
+margin: 10 px 0;
+width: 90%;
+border: 1px solid #999;
+outline: none;
+
+}
+button
+{
+color: #000;
+width: 100%;
+padding: 10px;
+border-radius: 20px;
+font-size: 15px;
+margin: 10px 0;
+border: none;
+outline: none;
+cursor: pointer;
+}
+.sign-btn
+{
+background-color: #000;
+    opacity: 1.4;
+    
+}
+</style>
+</head>
+<body>
+<div class="sign-up-form">
+    <img src={% static "img/portfolio/fullsize/blacklogo.png" %} alt="">
+    <h1><font face = "WildWest">LOGIN</font></h1>
+<form action="/loginform" method="POST">
+    {% csrf_token %}
+<input type="text" id="username" name="username" class="input-box" placeholder="Your Username">
+<input type="password" id="user_password" name="user_password" class="input-box" placeholder="Your Password">    
+    <p><font face = "WildWest" >Not signed up yet? <a href="{% url 'signupforms' %}" style="color: #000080">Sign up</a></font></p>
+    <p><font face = "WildWest" color="red" size="3" >Note: You will be redirected to this page again if something invalid is entered.</font><p>
+    <button type="submit" class="sign-btn"><font face = "WildWest" size="4" color="white">Login</font></button>
+    
+
+</form>
+</div>
+</body>
+</html>

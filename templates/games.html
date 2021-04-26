@@ -1,0 +1,152 @@
+{% load static %}
+
+<html><head>
+    <title>game</title>
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Raleway|Reenie+Beanie);
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 5%;
+  font-family: "Raleway", sans-serif;
+  line-height: 1.5em;
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  color: black;
+}
+
+.caption,
+h1,
+.date {
+  margin: 0;
+  text-align: center;
+}
+
+.caption,
+h1 {
+  font-family: "Reenie Beanie", sans-serif;
+  font-size: 2em;
+  padding: 10px 10px 0 10px;
+}
+
+.date {
+  font-size: 0.75em;
+}
+
+.description {
+  font-size: 0.9em;
+  padding: 0 20px 20px 20px;
+  text-align: left;
+}
+
+.container {
+  perspective: 1000px;
+  display: inline-block;
+  margin: 3%;
+}
+
+.container:hover .flipper {
+  transform: rotateY(180deg);
+}
+
+.container,
+.front,
+.back {
+  width: 250px;
+  height: 250px;
+}
+
+.flipper {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.front,
+.back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 250px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.front {
+  z-index: 2;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+#content {
+  text-align: center;
+}
+
+        </style>
+    </head>
+<body>
+
+<div id="content">
+    <h1>GAMES</h1>
+  <div class="container">
+    <div class="flipper">
+      <div class="front">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Tic_tac_toe.svg/1200px-Tic_tac_toe.svg.png" alt="">
+        <p class="caption">TIC-TAC TOE</p>
+      </div>
+      <div class="back">
+        <a href="{% url 'tictac' %}" target="_blank">
+          <h1>TIC-TAC TOE</h1>
+        </a>
+        
+        <p class="description">Tic-tac toe gives nostalgia, the game which u played with your friends on benches and desks.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="flipper">
+      <div class="front">
+        <img src="https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iuZPzR7UnrBo/v1/1000x-1.jpg" alt="">
+        <p class="caption">FLAPPY BIRD</p>
+      </div>
+      <div class="back">
+        <a href="{% url 'Flappybird' %}" target="_blank">
+          <h1>FLAPPY BIRD</h1>
+        </a>
+        
+        <p class="description">This is flappy bird game.Go and try to make the highest score.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="flipper">
+      <div class="front">
+        <img src="https://i.stack.imgur.com/bJ120.png" alt="">
+        <p class="caption">under construction</p>
+      </div>
+      <div class="back">
+        <a href="#" target="_blank">
+          <h1>Under construction</h1>
+        </a>
+        
+        <p class="description">will be updating soon, till then stay tuned. </p>
+      </div>
+    </div>
+  </div>
+</div>
+    </body>
+</html>

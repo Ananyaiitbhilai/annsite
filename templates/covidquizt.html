@@ -1,0 +1,123 @@
+{% load static %}
+<html>
+    <head><title>covidform</title>
+
+
+
+
+    <link rel="stylesheet" href="{% static 'css/covidquiz.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+
+            
+   <style>         
+            #popup {
+                width: 400px;
+                height: 300px;
+                background-image: url(
+https://cdn.stocksnap.io/img-thumbs/960w/word-letters_NOKVLBIGIX.jpg);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                box-shadow: 2px 2px 5px 3px white;
+            }
+            #location_1 {
+                text-align: center;
+                position: absolute;
+                left: 25%;
+                top: 30%;}
+            #name_1 {
+                text-align: center;
+                position: absolute;
+                left: 25%;
+                top: 20%;}
+            #age_1 {
+                text-align: center;
+                position: absolute;
+                left: 25%;
+                top: 40%;}
+#gender_1 {
+                text-align: center;
+                position: absolute;
+                left: 25%;
+                top: 50%;}
+           
+            .submitId {
+                position: absolute;
+                top: 65%;
+                left: 40%;
+            }
+            
+        </style>
+	</head>
+	<body>
+		
+
+		<div id="container">        <h1>JOIN THIS COVID AWARENESS DRIVE </h1>
+   			<br/>
+  			<div id="quiz"></div>
+            <p>Question 1:<br>Do vaccines cause autism ?<br>YES                             NO</p>
+    		<div class="button" id="next"><a href="#">Next</a></div>
+    		<div class="button" id="prev"><a href="#">Prev</a></div> 
+			<p id="demo"></p>
+    	</div>
+           
+        
+        <br />
+        <br />
+        <form action="covidquizt" method="POST">
+            {% csrf_token %}
+        <div class="POPmain" style="display: none;">
+            <div id="popup">
+                <h1 class="text-center text-white mt-5 font-weight-bold">  Please Provide Your Details</h1>
+                <input type="text" class="text-center w-50 form-control mt-5" id="location_1" name="location_1" placeholder= "enter your city,state,country here..." required>
+             <input type="text"  class="text-center w-50 form-control mt-5" id="name_1" name="name_1" placeholder="type your name here..." required>
+            <input type="integer" class="text-center w-50 form-control mt-5" id="age_1" name="age_1" placeholder="enter your age here..." required>
+            <input type="text" class="text-center w-50 form-control mt-5" id="gender_1" name="gender_1" placeholder="enter your gender here..." required>
+
+            <button class="submitId btn btn-primary text-center font-weight-bold mt-5" id="submitId" >Submit</button>
+            </div>
+            </div></form>
+  
+        <!-- Optional JavaScript -->
+        <!-- jQuery first,then Popper.js,then Bootstrap JS -->
+        <script src=
+"https://code.jquery.com/jquery-3.2.1.slim.min.js"
+                integrity=
+ "sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+                crossorigin="anonymous"></script>
+  
+        <script src=
+"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" 
+                integrity=
+"sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+                crossorigin="anonymous"></script>
+  
+        <script src=
+"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" 
+                integrity=
+"sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" 
+                crossorigin="anonymous"></script>
+        <script>
+            // When doument is ready
+            $(document).ready(function () {
+                // SetTimeout function
+                // Will execute the function
+                // after 3 sec
+                setTimeout(function () {
+                    $(".POPmain").css("display", "block");
+                }, 1000);
+            });
+            $(".submitId").click(function () {
+                if (document.getElementById('location_1' & 'name_1' & 'age_1' & 'gender_1').value== ""){
+                    alert('please enter your details')}
+                else{
+                    $(".POPmain").css("display", "none");}
+            });
+        </script>
+        
+    </body>
+</html>
