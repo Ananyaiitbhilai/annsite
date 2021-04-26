@@ -88,12 +88,12 @@ WSGI_APPLICATION = 'mywebsite.wsgi.application'
 
 DATABASES = {
       'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'usertry',
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
-        'USER': 'root',
-        'PASSWORD': 'root',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'ddgm9q3rbgue3g',
+        'HOST': 'ec2-54-167-152-185.compute-1.amazonaws.com',
+        'PORT': '5432',
+        'USER': 'cjhsrmdnyjowsx',
+        'PASSWORD': '89659af33f8dd7621040e5c7535dba894ee935469b2c7b0296307829ff20706e',
         'OPTIONS' : {
             'init_command':"SET sql_mode='STRICT_TRANS_TABLES'",
         }
