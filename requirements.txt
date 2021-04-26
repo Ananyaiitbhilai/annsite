@@ -56,6 +56,7 @@ textblob==0.15.3
 tqdm==4.60.0
 tweepy==3.10.0
 urllib3==1.26.4
+utils==1.0.1
 vaderSentiment==3.3.2
 virtualenv==20.4.2
 virtualenvwrapper-win==1.2.6
