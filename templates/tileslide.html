@@ -1,344 +1,160 @@
-<!DOCTYPE html>
-{% load static %}
-<html >
 <head>
-  <meta charset="UTF-8">
-  <title>Open signup</title>
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-
-  
-      
-<style>
-  @import url(https://fonts.googleapis.com/css?family=Abril+Fatface);
-@import url(https://fonts.googleapis.com/css?family=Roboto:500);
-html, body {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300i,400" rel="stylesheet">
+  <style>
 
 body {
+  background-color: #100e17;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+  position: absolute;
+  height: 300px;
+  width: 600px;
+  top: 60px;
+  left: calc(50% - 300px);
+  display: flex;
+}
+
+.card {
+  display: flex;
+  height: 280px;
+  width: 200px;
+  background-color: #17141d;
+  border-radius: 10px;
+  box-shadow: -1rem 0 3rem #000;
+/*   margin-left: -50px; */
+  transition: 0.4s ease-out;
+  position: relative;
+  left: 0px;
+}
+
+.card:not(:first-child) {
+    margin-left: -50px;
+}
+
+.card:hover {
+  transform: translateY(-20px);
+  transition: 0.4s ease-out;
+}
+
+.card:hover ~ .card {
+  position: relative;
+  left: 50px;
+  transition: 0.4s ease-out;
+}
+
+.title {
   color: white;
-  font-family: "Roboto", sans-serif;
-  font-size: 16px;
-  line-height: 1em;
-  background-color: black;
+  font-weight: 300;
+  position: absolute;
+  left: 20px;
+  top: 15px;
 }
 
-#slides {
+.bar {
   position: absolute;
-  top: 17%;
-  left: 10%;
-  right: 48%;
-  bottom: 17%;
-  overflow: hidden;
+  top: 100px;
+  left: 20px;
+  height: 5px;
+  width: 150px;
 }
-#slides ul {
+
+.emptybar {
+  background-color: #2e3033;
+  width: 100%;
+  height: 100%;
+}
+
+.filledbar {
   position: absolute;
   top: 0px;
-  left: 0px;
-  width: 100%;
+  z-index: 3;
+  width: 0px;
   height: 100%;
-}
-#slides ul li {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-#slides ul li:nth-child(1) {
-  background-color: #131313;
-}
-#slides ul li:nth-child(2) {
-  background-color: #262626;
-}
-#slides ul li:nth-child(3) {
-  background-color: #393939;
-}
-#slides ul li:nth-child(4) {
-  background-color: #262626;
-}
-#slides ul li:nth-child(5) {
-  background-color: #131313;
-}
-#slides ul li:nth-child(6) {
-  background-color: #262626;
+  background: rgb(0,154,217);
+  background: linear-gradient(90deg, rgba(0,154,217,1) 0%, rgba(217,147,0,1) 65%, rgba(255,186,0,1) 100%);
+  transition: 0.6s ease-out;
 }
 
-ul#steps {
-  position: absolute;
-  top: 50%;
-  left: 20%;
-  height: 110px;
-  margin-top: -55px;
-}
-ul#steps li {
-  position: relative;
-  height: 100%;
-  color: #999;
-  font-family: "Abril Fatface", serif;
-  -webkit-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0);
-  -webkit-transition: color 666ms cubic-bezier(0.666, 0, 0.333, 1), font-size 666ms cubic-bezier(0.666, 0, 0.333, 1);
-  transition: color 666ms cubic-bezier(0.666, 0, 0.333, 1), font-size 666ms cubic-bezier(0.666, 0, 0.333, 1);
-}
-ul#steps li.active {
-  color: #bf482c;
-  font-size: 96px;
+.card:hover .filledbar {
+  width: 120px;
+  transition: 0.4s ease-out;
 }
 
-#titles {
+.circle {
   position: absolute;
-  top: 50%;
-  left: 40%;
-  width: 60%;
-  height: 330px;
-  margin-top: -165px;
-  padding: 110px 0;
-}
-#titles ul {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100%;
-}
-#titles li {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  visibility: hidden;
-  opacity: 0;
-  -webkit-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0);
-  -webkit-transition: visibility 0ms linear 666ms, opacity 666ms cubic-bezier(0.666, 0, 0.333, 1);
-  transition: visibility 0ms linear 666ms, opacity 666ms cubic-bezier(0.666, 0, 0.333, 1);
-}
-#titles li.active {
-  visibility: visible;
-  opacity: 1;
-  -webkit-transition: visibility 0ms linear, opacity 666ms cubic-bezier(0.666, 0, 0.333, 1);
-  transition: visibility 0ms linear, opacity 666ms cubic-bezier(0.666, 0, 0.333, 1);
-}
-#titles li h2 {
-  height: 110px;
-  font-family: "Abril Fatface", serif;
-  font-size: 96px;
-  display: block;
-}
-#titles li p {
-  height: 110px;
-  color: #999;
+  top: 150px;
+  left: calc(50% - 60px);
 }
 
-.roller {
-  -webkit-transform: translate3d(0, 0%, 0);
-          transform: translate3d(0, 0%, 0);
-  -webkit-transition: -webkit-transform 666ms cubic-bezier(0.666, 0, 0.333, 1);
-  transition: -webkit-transform 666ms cubic-bezier(0.666, 0, 0.333, 1);
-  transition: transform 666ms cubic-bezier(0.666, 0, 0.333, 1);
-  transition: transform 666ms cubic-bezier(0.666, 0, 0.333, 1), -webkit-transform 666ms cubic-bezier(0.666, 0, 0.333, 1);
+.stroke {
+  stroke: white;
+  stroke-dasharray: 360;
+  stroke-dashoffset: 360;
+  transition: 0.6s ease-out;
 }
-        .GFG {
-            background-color: black;
-            border: 2px solid black;
-            color: #bf482c;
-            padding: 5px 10px;
-            text-align: center;
-            display: inline-block;
-            font-size: 20px;
-            margin: 10px 10px;
-            cursor: pointer;
-            text-decoration:none;
-        }
-    .GF{position:absolute;
-     top:0;
-     right:0;
-         background-color: black;
-            border: 2px solid black;
-            color: #bf482c;
-            padding: 5px 10px;
-            text-align: center;
-            display: inline-block;
-            font-size: 20px;
-            
-            cursor: pointer;
-            text-decoration:none;
-    }
-    </style>
-  
+
+svg {
+  fill: #17141d;
+  stroke-width: 2px;
+}
+
+.card:hover .stroke {
+  stroke-dashoffset: 100;
+  transition: 0.6s ease-out;
+}
+  </style>
 </head>
-
 <body>
-    <a href="{% url 'logout' %}" class="GF">
-        SIGN OUT
-    </a>
-          
-  <div id="slides">
-  <ul class="roller">
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-     <li></li> 
-  </ul>
+<div class="container">
+  <div class="card">
+    <h3 class="title">AntiSbO2</h3>
+    <div class="bar">
+      <div class="emptybar"></div>
+      <div class="filledbar"></div>
+    </div>
+    <div class="circle"><p style="color:white">A Buzz site for nerds by nerds. </p>
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <circle class="stroke" cx="60" cy="60" r="50"/>
+    </svg>
+    </div>
+  </div>
+  <div class="card">
+    <h3 class="title">Card 2</h3>
+    <div class="bar">
+      <div class="emptybar"></div>
+      <div class="filledbar"></div>
+    </div>
+    <div class="circle">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <circle class="stroke" cx="60" cy="60" r="50"/>
+    </svg>
+    </div>
+  </div>
+  <div class="card">
+    <h3 class="title">Card 3</h3>
+    <div class="bar">
+      <div class="emptybar"></div>
+      <div class="filledbar"></div>
+    </div>
+    <div class="circle">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <circle class="stroke" cx="60" cy="60" r="50"/>
+    </svg>
+    </div>
+  </div>
+  <div class="card">
+    <h3 class="title">Card 4</h3>
+    <div class="bar">
+      <div class="emptybar"></div>
+      <div class="filledbar"></div>
+    </div>
+    <div class="circle">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <circle class="stroke" cx="60" cy="60" r="50"/>
+    </svg>
+    </div>
+  </div>
 </div>
-<ul id="steps" class="roller">
-  <li>01</li>
-  <li>02</li>
-  <li>03</li>
-  <li>04</li>
-  <li>05</li>
-  <li>06</li>  
-    
-</ul>
-<div id="titles">
-  <ul class="roller">
-    <li>
-      <h2>Hola</h2>
-      <h2>Amigos</h2>
-      <p>Thanks for signing up. Explore this fun site. Use the up, and down arrow keys to navigate.
-          <br>Click on Click here button to get to that respective page.
-        
-  </p>
-    </li>
-    <li>
-      <h2>AntiSbO2</h2>
-      <h2>Platform</h2>
-      <p> A Buzz site for nerds by nerds.
-        <a href="https://antisbo2.herokuapp.com/" class="GFG">
-        Click here
-    </a></p>
-    </li>
-    <li>
-      <h2>Join</h2>
-      <h2>Community</h2>
-      <p>Answer 10 simple questions and based on that enter your community.
-        <a href="{% url 'quiz' %}" class="GFG">
-        Click here
-    </a></p>
-    </li>
-    <li>
-      <h2>Tweeps </h2>
-      <h2>POV</h2>
-      <p>Sentiment analysis of Tweeps. What tweeps say who will win today's IPL match?
-          <br>Views about COVID and recent advancement in vaccines and optimism.
-        <a href="{% url 'twitter_home' %}" class="GFG">
-        Click here
-    </a></p>
-    </li>
-    <li>
-      <h2>Play</h2>
-        <h2>Games</h2>
-      <p>Getting bored. Play some basic yet interesting and fun games.
-        <a href="{% url 'games' %}" class="GFG">
-        Click here
-    </a></p>
-    </li>
-      <li>
-      <h2>Adios</h2>
-      <h2>Amigos</h2>
-      <p>This was our amateur site. Hope you liked it.
-        </p>
-    </li>
-  </ul>
-</div>
-  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-<script src='http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js'></script>
-
-    <script>(function() {
-      var Application, Utils,
-        bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
-    
-      window.DEMO = window.DEMO || {};
-    
-      Utils = {
-        'transform': Modernizr.prefixed('transform').replace(/([A-Z])/g, (function(_this) {
-          return function(str, m1) {
-            return '-' + m1.toLowerCase();
-          };
-        })(this)).replace(/^ms-/, '-ms-'),
-        'translate': (function(_this) {
-          return function(x, y) {
-            var tran, vals;
-            tran = Modernizr.csstransforms3d ? 'translate3d' : 'translate';
-            vals = Modernizr.csstransforms3d ? '(' + x + ', ' + y + ', 0)' : '(' + x + ', ' + y + ')';
-            return tran + vals;
-          };
-        })(this)
-      };
-    
-      Application = (function() {
-        function Application() {
-          this.update = bind(this.update, this);
-          this.next = bind(this.next, this);
-          this.previous = bind(this.previous, this);
-          this.onKeyup = bind(this.onKeyup, this);
-          DEMO.utils = Utils;
-          this.$doc = $(document);
-          this.$roller = $('.roller');
-          this.$step = $('#steps li');
-          this.$title = $('#titles li');
-          this.min = 0;
-          this.max = this.$step.length - 1;
-          this.active_index = 0;
-          this.$step.eq(this.active_index).addClass('active');
-          this.$title.eq(this.active_index).addClass('active');
-          this.observe();
-        }
-    
-        Application.prototype.observe = function() {
-          return this.$doc.on('keyup', this.onKeyup);
-        };
-    
-        Application.prototype.onKeyup = function(e) {
-          var kc;
-          kc = e.keyCode;
-          if (kc === 38) {
-            e.preventDefault();
-            this.previous();
-          }
-          if (kc === 40) {
-            e.preventDefault();
-            return this.next();
-          }
-        };
-    
-        Application.prototype.previous = function() {
-          if (this.active_index > this.min) {
-            this.active_index--;
-            return this.update();
-          }
-        };
-    
-        Application.prototype.next = function() {
-          if (this.active_index < this.max) {
-            this.active_index++;
-            return this.update();
-          }
-        };
-    
-        Application.prototype.update = function() {
-          var y;
-          y = -(this.active_index * 100);
-          this.$roller.css(DEMO.utils.transform, DEMO.utils.translate(0, y + "%"));
-          this.$step.removeClass('active');
-          this.$title.removeClass('active');
-          this.$step.eq(this.active_index).addClass('active');
-          return this.$title.eq(this.active_index).addClass('active');
-        };
-    
-        return Application;
-    
-      })();
-    
-      $(function() {
-        return DEMO.instance = new Application();
-      });
-    
-    }).call(this);
-    </script>
-
 </body>
-</html>
