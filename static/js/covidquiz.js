@@ -1,47 +1,46 @@
-{% load static %}
 (function() 
- {
-  var allQuestions = [{
-    question: "Do vaccines cause autism ?",
-    options: ["YES", "NO"],
-    answer: 1
-  }, {
-    question: "Does RNA codes changes upon mutation in the COVID-18 virus cell ?",
-    options: ["YES", "NO"],
-    answer: 1
-  }, {
-    question: "Is the COVID vaccine RNA based ?",
-    options: ["YES", "NO"],
-    answer: 0
-  },{
-    question: "Are smokers more vulnerable to COVID-19 ?",
-    options: ["YES", "NO"],
-    answer: 0
-  }, {
-    question: "Which state is at the highest risk ?",
-    options: ["UP", "MAHARASHTRA"],
-    answer: 0
-  },{
-    question: "Are you certain that the person next to might not be infected ?",
-    options: ["YES", "NO"],
-    answer: 1
-  },{
-    question: "Do you keep a regular check on Covid Count, guidelines ?",
-    options: ["YES", "NO"],
-    answer: 0
-  },{
-    question: "Is COVID-19 susceptible to higher tempratures ?",
-    options: ["YES", "NO"],
-    answer: 0
-  },{
-    question: "Is the COVID immunity long term ?",
-    options: ["YES", "NO"],
-    answer: 1
-  },{
-    question: "Are weekly lockdowns a thing in India ?",
-    options: ["YES", "NO"],
-    answer: 0
-    }];
+{
+ var allQuestions = [{
+   question: "Do vaccines cause autism ?",
+   options: ["YES", "NO"],
+   answer: 1
+ }, {
+   question: "Does RNA codes changes upon mutation in the COVID-18 virus cell ?",
+   options: ["YES", "NO"],
+   answer: 1
+ }, {
+   question: "Is the COVID vaccine RNA based ?",
+   options: ["YES", "NO"],
+   answer: 0
+ },{
+   question: "Are smokers more vulnerable to COVID-19 ?",
+   options: ["YES", "NO"],
+   answer: 0
+ }, {
+   question: "Which state is at the highest risk ?",
+   options: ["UP", "MAHARASHTRA"],
+   answer: 0
+ },{
+   question: "Are you certain that the person next to might not be infected ?",
+   options: ["YES", "NO"],
+   answer: 1
+ },{
+   question: "Do you keep a regular check on Covid Count, guidelines ?",
+   options: ["YES", "NO"],
+   answer: 0
+ },{
+   question: "Is COVID-19 susceptible to higher tempratures ?",
+   options: ["YES", "NO"],
+   answer: 0
+ },{
+   question: "Is the COVID immunity long term ?",
+   options: ["YES", "NO"],
+   answer: 1
+ },{
+   question: "Are weekly lockdowns a thing in India ?",
+   options: ["YES", "NO"],
+   answer: 0
+   }];
   
   var quesCounter = 0;
   var selectOptions = [];
@@ -138,7 +137,7 @@
         });
     }
   
-  function displayResult() 
+    function displayResult() 
     {
         var score = $('<p>',{id: 'question'});
         var correct = 0;
@@ -148,9 +147,8 @@
         var ls = document.createElement('a');
         ls.appendChild(document.createTextNode('BECOME COVID AWARE')); 
         ls.setAttribute('href', 'https://www.mohfw.gov.in/'); 
-        var home = document.createElement('a');
-        home.appendChild(document.createTextNode('GO BACK TO HOME PAGE')); 
-        home.setAttribute('href', '{% url 'homepg' %}');
+        
+    
         
         for (var i = 0; i < selectOptions.length; i++) 
         {
@@ -165,22 +163,22 @@
           text = "Sad, You are not much aware about COVID. Go and check out this necessary COVID information now. This might help world to combat COVID : ";
           document.getElementById("demo").innerHTML = text;
           document.getElementById('demo').appendChild(who);
-          document.getElementById('demo').appendChild(home);
+          
             
               
         } else if (correct > 5 & correct < 9){
           text = "Good, You are aware about COVID but still awareness is needed. Go and Check out the live stats on COVID count now. This might help world to combat COVID in a better way : ";
           document.getElementById("demo").innerHTML = text;
           document.getElementById('demo').appendChild(ls);
-          document.getElementById('demo').appendChild(home);
+         
         } else {
             text = "Bravo! you are very much aware about covid. But still you can check out live stats, link to it is provided on our home page."
             document.getElementById("demo").innerHTML = text;
-            document.getElementById('demo').appendChild(home);
+           
           
         }
            
-        return score; 
+        return score;  
         
 
         
