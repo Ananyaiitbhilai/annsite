@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
-from mywebsite.models import mywebsite_signupform
+from mywebsite.models import signupform
 from mywebsite.models import communities
 from mywebsite.models import cquiz
 import sys
@@ -35,7 +35,7 @@ def signupforms(request):
         request.session['spassword'] = password
         
         
-        mywebsite_signupform(username=username ,user_email=email, user_password=password).save()
+        signupform(username=username ,user_email=email, user_password=password).save()
         return render(request,'tileslide.html')
     else:
         return render(request,'signupforms.html')
@@ -68,7 +68,7 @@ def loginform(request):
         request.session['spassword'] = password
         
         print("data saved")
-        userinfo=mywebsite_signupform.objects.filter(username=username , user_password=password)
+        userinfo=signupform.objects.filter(username=username , user_password=password)
         if (userinfo):
             return render(request,'logintile.html')
         else:
