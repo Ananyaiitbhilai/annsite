@@ -40,7 +40,7 @@ def signupforms(request):
         
         
         signupform(username=username ,user_email=email, user_password=password).save()
-        return render(request,'tileslide.html')
+        return render(request,'party.html')
     else:
         return render(request,'signupforms.html')
 
@@ -74,7 +74,7 @@ def loginform(request):
         print("data saved")
         userinfo=signupform.objects.filter(username=username , user_password=password)
         if (userinfo):
-            return render(request,'logintile.html')
+            return render(request,'party.html')
         else:
             raise forms.ValidationError()
             return render(request,'loginform.html')
