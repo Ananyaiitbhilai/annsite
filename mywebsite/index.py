@@ -84,6 +84,9 @@ def loginform(request):
     
 def games(request):
         return render(request,'games.html')
+    
+def pls(request):
+        return render(request,'pls.html')
 
     
 def contact(request):
