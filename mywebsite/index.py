@@ -131,7 +131,7 @@ def covidquizt(request):
         cquiz(name_1=name, age_1=age, location_1=location, gender_1=gender).save()
         return render(request,'covidquiz.html')
     else:
-        return render(request,'covidquiz.html')
+        return render(request,'covidquizt.html')
     
     
    
