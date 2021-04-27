@@ -22,6 +22,10 @@ def vaibhavpg(request):
 def pravinpg(request):
     return render(request,'pravinpg.html')
 
+
+def party(request):
+    return render(request,'party.html')
+
 def buzzinga(request):
     return render(request,'buzzinga.html')
 
