@@ -36,6 +36,7 @@ urlpatterns = [
     path('vaibhavpg',index.vaibhavpg, name='vaibhavpg'),
     path('pravinpg',index.pravinpg, name='pravinpg'),
     path('buzzinga',index.buzzinga, name='buzzinga'),
+    path('party',index.party, name='party'),
     path('signupforms',index.signupforms, name='signupforms'),
     path('team',index.team, name='team'),
     path('tictac',index.tictac, name='tictac'),
