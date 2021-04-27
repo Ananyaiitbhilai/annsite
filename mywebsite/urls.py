@@ -33,6 +33,7 @@ urlpatterns = [
     path('', index.homepg,name='homepg'),
     
     path('ananyapg',index.ananyapg, name='ananyapg'),
+    path('pls',index.pls, name='pls'),
     path('vaibhavpg',index.vaibhavpg, name='vaibhavpg'),
     path('pravinpg',index.pravinpg, name='pravinpg'),
     path('buzzinga',index.buzzinga, name='buzzinga'),
